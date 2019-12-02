@@ -6,10 +6,7 @@
 		<link rel="icon" href="favicon.ico" type="image/x-icon">
 		<link rel="stylesheet" type="text/css" href="css/reset.css">
 		<link rel="stylesheet" type="text/css" href="css/index.css">
-		<script>
-			// alert("Olá Mundo");
-			console.log("Oi mundo");
-		</script>
+		
 	</head>
 	<body>
 		<header>
@@ -74,6 +71,13 @@
 
 			</section>
 		</main>
-
+		<script>
+			// alert("Olá Mundo");
+			// console.log("Oi mundo");
+			var titulo = document.querySelector("h1");
+			console.log(titulo); // Por que está mostrando o resultado da linha 80 que teoricamente ainda não foi processada?
+			console.log(titulo.textContent);
+			titulo.textContent = "Aparecida Nutricionista";
+		</script>
 	</body>
 </html>
