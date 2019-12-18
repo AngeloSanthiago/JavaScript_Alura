@@ -23,12 +23,16 @@ for (var i = 0; i < pacientes.length; i++) {
         console.log("Peso inválido!");
         pesoEhValido = false;
         tdImc.textContent = "Peso inválido!"
+        // paciente.style.color = "red";
+        // paciente.style.backgroundColor = "lightcoral";
+        paciente.classList.add("paciente-invalido");
     }
     
     if (altura <= 0 || altura >= 3.0) {
         console.log("Altura inválida!");
         alturaEhValido = false;
         tdImc.textContent = "Altura inválida!"
+        paciente.classList.add("paciente-invalido");
     }
     if (alturaEhValido && pesoEhValido) {
         var imc = peso / (altura * altura);
