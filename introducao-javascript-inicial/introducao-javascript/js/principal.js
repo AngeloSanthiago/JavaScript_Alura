@@ -43,7 +43,8 @@ for (var i = 0; i < pacientes.length; i++) {
 
 var botaoAdicionar = document.querySelector("#adicionar-paciente"); 
 
-botaoAdicionar.addEventListener("click", function(){
+botaoAdicionar.addEventListener("click", function(event){
+    event.preventDefault(); // a propriedade "event" parece ter se tornado do objeto Event apenas por ter se chamado o método preventDefault().
     console.log("Oi, cliquei no botão");
 })
 
