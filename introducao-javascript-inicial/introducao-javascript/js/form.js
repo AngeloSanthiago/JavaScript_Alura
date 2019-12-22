@@ -1,17 +1,16 @@
 var botaoAdicionar = document.querySelector("#adicionar-paciente"); 
 botaoAdicionar.addEventListener("click", function(event){
     event.preventDefault(); // a propriedade "event" parece ter se tornado do objeto Event apenas por ter se chamado o método preventDefault().
-    // console.log("Oi, cliquei no botão");
-    var form = document.querySelector("#form-adiciona");
-    //abaixo o comando para acessar o elemento pela propriedade name diretamente
-    console.log(form.altura.value);
-    // console.log(form.querySelector("#altura")); // forma alternativa a anterior
-    
-    var nome = form.nome.value;
-    var peso = form.peso.value;
-    var altura = form.altura.value;
-    var gordura = form.gordura.value;
 
+    var form = document.querySelector("#form-adiciona");
+
+    
+    // Extraindo informações do paciente de dentro do FORM
+    var paciente = obtemPacienteDoFormulario(form);
+    console.log(paciente);
+    
+
+    // Cria a TR e a TD do novo paciente
     var pacienteTr = document.createElement("tr");
     var nomeTd = document.createElement("td");
     var pesoTd = document.createElement("td");
@@ -30,11 +29,20 @@ botaoAdicionar.addEventListener("click", function(event){
     pacienteTr.appendChild(alturaTd);
     pacienteTr.appendChild(gorduraTd);
     pacienteTr.appendChild(imcTd);
-    
-    // console.log(pacienteTr);
 
+    // Adicionando o paciente na tabela
     var tabela = document.querySelector("#tabela-pacientes");
 
     tabela.appendChild(pacienteTr);
     
 })
+function obtemPacienteDoFormulario(form) {
+    var paciente = {
+        nome: form.nome.value,
+        peso: form.peso.value,
+        altura: form.altura.value,
+        gordura: form.gordura.value,
+        imc: calculaImc(form.peso.value, form.altura.value)
+    }
+    return paciente;
+}
