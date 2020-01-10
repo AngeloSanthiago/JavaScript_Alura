@@ -1,4 +1,4 @@
-teste_innerHTML_umElemento();
+// teste_innerHTML_umElemento();
 
 function teste_innerHTML_umElemento() {
     var tableHeadElement = document.querySelector("thead");
