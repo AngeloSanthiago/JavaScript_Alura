@@ -1,4 +1,3 @@
-
 // Atribuindo a ação de remoção ao elemento "table"
 var tabela = document.querySelector("table");
 tabela.addEventListener("dblclick",function(event) {
