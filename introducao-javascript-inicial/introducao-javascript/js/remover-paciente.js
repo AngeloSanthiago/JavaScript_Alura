@@ -2,7 +2,10 @@
 var tabela = document.querySelector("table");
 tabela.addEventListener("dblclick",function(event) {
     // O "event.taget" neste caso vai ser o "td" e o "parentNode" o "tr"
-    event.target.parentNode.remove();
+    event.target.parentNode.classList.add("fadeOut");
+    setTimeout(function() {
+        event.target.parentNode.remove();
+    },500);
 });
 
 // Atribuindo a ação de remoção a cada "tr" da tabela
